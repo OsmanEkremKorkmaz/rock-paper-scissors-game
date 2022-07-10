@@ -9,7 +9,7 @@ function Choice({ setScore, setHistory }) {
         setSelected(choice);
         const computerChoice = (Math.floor(Math.random() * 3)) + 1;
         setComputerSelected(computerChoice === 1 ? 'rock' : computerChoice === 2 ? 'paper' : 'scissors');
-        setResult(compare(selected, computerSelected));
+        setResult(compare(choice, (computerChoice === 1 ? 'rock' : computerChoice === 2 ? 'paper' : 'scissors')));
     }
     
     const compare = (player, computer) => {
