@@ -72,10 +72,10 @@ function Choice({ setScore, setHistory }) {
                     <img src={options["rock"].image} alt="Rock" />
                 </button>
                 <button onClick={() => handleClick("scissors")}>
-                    <img src={options["paper"].image} alt="Paper" />
+                    <img src={options["scissors"].image} alt="Scissors" />
                 </button>
                 <button onClick={() => handleClick("paper")}>
-                    <img src={options["scissors"].image} alt="Scissors" />
+                    <img src={options["paper"].image} alt="Paper" />
                 </button>
                 </div>            
             </>
