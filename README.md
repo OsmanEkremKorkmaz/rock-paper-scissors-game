@@ -2,7 +2,7 @@
 
 [Live](https://oe-rock-paper-scissors.netlify.app/)
 
-![image](https://user-images.githubusercontent.com/96390357/178149899-6501f8ec-ae67-4353-9094-f8b0cf18ef91.png)
+![image](https://user-images.githubusercontent.com/96390357/178162440-93e25dab-3437-4c85-acde-38ac21496806.png)
 
 ## Starting Project
 
