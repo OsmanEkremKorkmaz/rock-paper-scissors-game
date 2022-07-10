@@ -33,31 +33,29 @@ a {
   color: #fff;
   text-decoration: none;
   margin-left: 10vw;
+  margin-top: 4vh;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .history {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  cursor: default;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
   overflow-y: auto;
   margin-right: 10vw;
-  max-height: 50vh;
+  margin-top: 4vh;
   background-color: #444;
   padding: 10px;
   border-radius: 10px;
-}
-
-.top {
+  transition: all 0.3s ease-in-out;
   position: fixed;
-  height: 4em;
   top: 0;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100vw;
+  right: 0;
+  min-height: 5vh;
 }
 
 
@@ -117,6 +115,93 @@ button > img {
 }
 
 button:hover {
+  transform: scale(1.1);
+}
+
+.selected-choice {
+  
+  height: auto;
+  width: 30vw;
+  max-width: 200px;
+}
+
+.selected-items {
+  display: flex;
+  gap: 10vw;
+}
+
+.user-choice, .computer-choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.result {
+  background-color: #444;
+  padding: 20px;
+  color: #fff;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  width: calc(100% - 40px);
+
+}
+
+.win {
+  background-color: #4caf50;
+}
+
+.lose {
+  background-color: #f44336;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  background-color: #444;
+  padding: 20px;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  width: calc(100% - 40px);
+}
+
+.play-again {
+  background-color: #444;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 5vh;
+  width: 5vh;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  padding: 10px;
+
+}
+
+.play-again > svg {
+  height: 4vh;
+  width: 4vh;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #f1f1f1;
+}
+
+
+.play-again:hover {
   transform: scale(1.1);
 }
 

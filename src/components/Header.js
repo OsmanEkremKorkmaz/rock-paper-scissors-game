@@ -4,7 +4,7 @@ function Header({score}) {
   return (
     <header>
         <h1>Rock Paper Scissors</h1>
-        <span>Score: {score}</span>
+        <span className='score'>Score: {score}</span>
     </header>
   )
 }

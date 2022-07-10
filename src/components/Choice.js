@@ -1,16 +1,41 @@
 import React, { useState } from 'react'
+import { useAutoAnimate } from '@formkit/auto-animate/react'
 
 function Choice({ setScore, setHistory }) {
     const [selected, setSelected] = useState(null);
     const [computerSelected, setComputerSelected] = useState(null);
     const [result, setResult] = useState(null);
+    const [animationParent] = useAutoAnimate()
+    
 
     const handleClick = (choice) => {
         setSelected(choice);
         const computerChoice = (Math.floor(Math.random() * 3)) + 1;
         setComputerSelected(computerChoice === 1 ? 'rock' : computerChoice === 2 ? 'paper' : 'scissors');
         setResult(compare(choice, (computerChoice === 1 ? 'rock' : computerChoice === 2 ? 'paper' : 'scissors')));
+        setTimeout(() => {
+            setSelected(null);
+            setComputerSelected(null);
+            setResult(null);
+        }, 1500);
     }
+
+    const options = {
+        "rock": {
+            name: 'rock',
+            image: "https://assets.ccbp.in/frontend/react-js/rock-paper-scissor/rock-image.png" 
+        },
+
+        "paper": {
+            name: 'paper',
+            image: "https://assets.ccbp.in/frontend/react-js/rock-paper-scissor/paper-image.png"
+        },  
+        "scissors": {
+            name: 'scissors',
+            image: "https://assets.ccbp.in/frontend/react-js/rock-paper-scissor/scissor-image.png"
+        }
+    }
+
     
     const compare = (player, computer) => {
         let result = null;
@@ -28,29 +53,36 @@ function Choice({ setScore, setHistory }) {
         return result;
     }
 
-    console.log(selected, computerSelected, result);
-
   return (
-    <main>
+    <main  ref={animationParent} >
         {
-            computerSelected ? <div>
-                <h3>Computer chose {computerSelected}</h3>
-                <h4>{result}</h4>
-            </div> : ""
-                
+            selected ? <div className='selected-items'>
+                <div className='user-choice'>
+                    <h3>You chose:</h3>
+                    <img alt={options[selected].name} className='selected-choice' src={options[selected].image} />
+                </div>
+                <div className='computer-choice'>
+                    <h3>Computer chose:</h3>
+                    <img alt={options[computerSelected].name} className='selected-choice' src={options[computerSelected].image} />
+                </div>
+            </div> : <>
+                <h1>Choice your weapon</h1>
+                <div className="choice-container">
+                <button onClick={() => handleClick("rock")}>
+                    <img src={options["rock"].image} alt="Rock" />
+                </button>
+                <button onClick={() => handleClick("scissors")}>
+                    <img src={options["paper"].image} alt="Paper" />
+                </button>
+                <button onClick={() => handleClick("paper")}>
+                    <img src={options["scissors"].image} alt="Scissors" />
+                </button>
+                </div>            
+            </>
         }
-        <h1>Choice your weapon</h1>
-        <div className="choice-container">
-        <button onClick={() => handleClick("rock")}>
-            <img src="https://assets.ccbp.in/frontend/react-js/rock-paper-scissor/rock-image.png" alt="Rock" />
-        </button>
-        <button onClick={() => handleClick("scissors")}>
-            <img src="https://assets.ccbp.in/frontend/react-js/rock-paper-scissor/scissor-image.png" alt="Paper" />
-        </button>
-        <button onClick={() => handleClick("paper")}>
-            <img src='https://assets.ccbp.in/frontend/react-js/rock-paper-scissor/paper-image.png' alt="Scissors" />
-        </button>
-        </div>
+        {
+            result ? <h1 className={`result ${result}`}>{result}</h1> : null
+        }
 
     </main>
   )
