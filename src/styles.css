@@ -65,6 +65,7 @@ header {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  margin-top: 1rem;
   background-color: #333;
   color: #fff;
   width: 100%;
@@ -95,6 +96,16 @@ button {
   height: auto;
   width: 30vw;
   max-width: 200px;
+}
+
+#install-app {
+  background-color: #444;
+  color: #fff !important;
+  display: none;
+  margin-top: 1rem;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
 }
 
 .choice-container {
