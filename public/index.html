@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#444444" />
     <meta name="description" content="Rock Paper Scissors is a game where you play against the computer and try to beat the computer in a game of rock paper scissors." />
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Rock Paper Scissors">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -19,17 +19,15 @@
     <link href="/img/ipadpro2_splash.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
     <link rel="apple-touch-icon" sizes="128x128" href="/img/128x128.png">
     <link rel="apple-touch-icon-precomposed" sizes="128x128" href="/img/128x128.png">
-    <link rel="icon" sizes="192x192" href="/img/192x192.png">
+    <link rel="icon" sizes="192x192" href="/img/144x144.png">
     <link rel="icon" sizes="128x128" href="/img/128x128.png">
     <title>Rock Paper Scissors</title>
-    <script>
+    <script >
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function () {
           navigator.serviceWorker.register('/sw.js?v=7');
         });
       }
-    </script>
-    <script>
         const installButton = document.getElementById('install-app');
         console.log(installButton);
         let beforeInstallPromptEvent
