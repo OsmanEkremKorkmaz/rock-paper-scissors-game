@@ -50,6 +50,7 @@ a {
   margin-top: 4vh;
   background-color: #444;
   padding: 10px;
+  width: 70px;
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
   position: fixed;
@@ -58,6 +59,35 @@ a {
   min-height: 5vh;
 }
 
+#install-app {
+  margin-right: calc(10vw + 120px);
+  margin-top: 4vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 5vh;
+}
+
+#install-app div {
+  position: relative;
+  padding: 10px;
+  
+  cursor: pointer;
+  background-color: #444;
+  color: #fff;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  height: 5vh;
+  width: 5vh ;
+}
+
+#install-app svg {
+  height: 4vh;
+  width: 4vh;
+}
 
 header {
   display: flex;
@@ -82,8 +112,6 @@ main {
 }
 
 button {
-  font-size: 1.2rem;
-  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,15 +126,6 @@ button {
   max-width: 200px;
 }
 
-#install-app {
-  background-color: #444;
-  color: #fff !important;
-  display: none;
-  margin-top: 1rem;
-  padding: 10px;
-  border-radius: 10px;
-  transition: all 0.3s ease-in-out;
-}
 
 .choice-container {
   display: flex;
@@ -207,7 +226,6 @@ button:hover {
   height: 4vh;
   width: 4vh;
   border-radius: 50%;
-  cursor: pointer;
   color: #f1f1f1;
 }
 

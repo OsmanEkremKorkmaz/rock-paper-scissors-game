@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="./favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#444444" />
     <meta name="description" content="Rock Paper Scissors is a game where you play against the computer and try to beat the computer in a game of rock paper scissors." />
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="./manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Rock Paper Scissors">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -25,24 +25,11 @@
     <script >
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function () {
-          navigator.serviceWorker.register('/sw.js?v=7');
+          navigator.serviceWorker.register('./sw.js')
+          .then((registration) => console.log('ServiceWorker registration successful with scope: ', registration.scope))
+          .catch((err) => console.log('ServiceWorker registration failed: ', err));
         });
       }
-        const installButton = document.getElementById('install-app');
-        console.log(installButton);
-        let beforeInstallPromptEvent
-        window.addEventListener("beforeinstallprompt", function(e) {
-            e.preventDefault();
-            beforeInstallPromptEvent = e
-            installButton.style.display = 'block'
-            installButton.addEventListener("click", function() {
-                e.prompt();
-            });
-            installButton.hidden = false;
-        });
-        installButton.addEventListener("click", function() {
-            beforeInstallPromptEvent.prompt();
-        });
     </script>
   </head>
   <body>
