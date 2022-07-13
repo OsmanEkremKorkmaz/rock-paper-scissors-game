@@ -95,7 +95,8 @@ header {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 4rem;
+  text-align: center;
   background-color: #333;
   color: #fff;
   width: 100%;

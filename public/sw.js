@@ -1,4 +1,4 @@
-const CACHE_NAME = 'version-1';
+const CACHE_NAME = 'RockPaperScissors';
 const urlsToCache = ['index.html']
 
 const self = this;
@@ -9,13 +9,7 @@ self.addEventListener('install', (event) => {
         caches.open(CACHE_NAME)
         .then((cache) => {
             console.log('Opened cache');
-            return cache.addAll([...urlsToCache,
-                '/',
-                '/static/js/0.bundle.js',
-                '/static/js/0.chunk.js',
-                '/static/js/main.chunk.js',
-
-                ]);
+            return cache.addAll(urlsToCache);
         })
     );
 });
