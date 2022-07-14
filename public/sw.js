@@ -1,5 +1,5 @@
 const CACHE_NAME = 'RockPaperScissors';
-const urlsToCache = ['index.html']
+const urlsToCache = ['index.html'];
 
 const self = this;
 
